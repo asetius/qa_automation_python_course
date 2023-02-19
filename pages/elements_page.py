@@ -43,9 +43,13 @@ class CheckBoxPage(BasePage):
         count = 21
         while count != 0:
             item = item_list[random.randint(1, 15)]
-            self.go_to_element(item)
-            item.click()
-            count -= 1
+            if count > 0:
+                self.go_to_element(item)
+                item.click()
+                count -= 1
+            else:
+                break
+
 
     def get_checked_checkboxes(self):
         checked_list = self.elements_are_present(self.locators.CHECKED_ITEMS)
