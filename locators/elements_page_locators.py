@@ -14,3 +14,9 @@ class TextBoxPageLocators:
     CREATED_EMAIL = (By.CSS_SELECTOR, '#output #email')
     CREATED_CURRENT_ADDRESS = (By.CSS_SELECTOR, '#output #currentAddress')
     CREATED_PERMANENT_ADDRESS = (By.CSS_SELECTOR, '#output #permanentAddress')
+
+
+class CheckBoxPageLocators:
+    EXPAND_ALL_BUTTON = (By.XPATH, "//button[@title='Expand all']")
+    ITEM_LIST = (By.XPATH, "//span[@class='rct-title']")
+    CHECKED_ITEMS = (By.XPATH, "//svg[@class='rct-icon rct-icon-check']")
