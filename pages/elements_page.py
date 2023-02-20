@@ -6,7 +6,6 @@ from pages.base_page import BasePage
 
 
 class TextBoxPage(BasePage):
-
     locators = TextBoxPageLocators()
 
     def fill_all_fields(self):
@@ -32,7 +31,6 @@ class TextBoxPage(BasePage):
 
 
 class CheckBoxPage(BasePage):
-
     locators = CheckBoxPageLocators()
 
     def open_full_list(self):
@@ -43,13 +41,9 @@ class CheckBoxPage(BasePage):
         count = 21
         while count != 0:
             item = item_list[random.randint(1, 15)]
-            if count > 0:
-                self.go_to_element(item)
-                item.click()
-                count -= 1
-            else:
-                break
-
+            self.go_to_element(item)
+            item.click()
+            count -= 1
 
     def get_checked_checkboxes(self):
         checked_list = self.elements_are_present(self.locators.CHECKED_ITEMS)
